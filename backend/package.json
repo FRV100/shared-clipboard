@@ -1,6 +1,7 @@
 {
   "name": "backend-express-websocket",
   "version": "1.0.0",
+  "type": "module",
   "description": "Backend Express WebSocket",
   "main": "src/index.js",
   "scripts": {

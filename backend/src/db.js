@@ -1,5 +1,5 @@
-const { Database } = require("bun:sqlite");
-const { mkdirSync } = require("fs");
+import { Database } from 'bun:sqlite';
+import { mkdirSync } from 'fs';
 
 // Crée le dossier data/ s'il n'existe pas encore (premier démarrage)
 mkdirSync("./data", { recursive: true });
@@ -19,4 +19,4 @@ db.run(`
 // Insère la ligne unique si elle n'existe pas encore
 db.run(`INSERT OR IGNORE INTO clipboard (id, content) VALUES (1, '')`);
 
-module.exports = db;
+export default db;

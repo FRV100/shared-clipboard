@@ -1,5 +1,5 @@
-const express = require('express');
-const healthcheckRouter = require('./routes/healthcheck');
+import express from 'express';
+import healthcheckRouter from './routes/healthcheck.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
