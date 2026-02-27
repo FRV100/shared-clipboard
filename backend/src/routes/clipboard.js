@@ -1,5 +1,7 @@
 import express from 'express';
+import { WebSocket } from 'ws';
 import db from '../db.js';
+import { wss } from '../ws.js';
 
 const router = express.Router();
 
@@ -28,6 +30,11 @@ router.post('/clipboard', (req, res) => {
         updated_at = CURRENT_TIMESTAMP
       WHERE id = 1
     `).run(content);
+    for (const client of wss.clients) {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(JSON.stringify({ content }));
+      }
+    }
     res.json({ message: 'Copied to clipboard' });
   } catch (err) {
     res.status(500).json({ error: 'Error while writing' });
