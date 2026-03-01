@@ -1,0 +1,11 @@
+services:
+  backend:
+    build: .
+    container_name: shared-clipboard-backend
+    ports:
+      - "127.0.0.1:3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
