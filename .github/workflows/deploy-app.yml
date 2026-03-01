@@ -5,8 +5,9 @@ on:
     branches: [main]
     paths:
       - 'backend/**'
-      - 'Dockerfile'
+      - 'web/**'
       - 'compose.yaml'
+      - 'Dockerfile'
       - '.github/workflows/deploy-app.yml'
 
 jobs:

@@ -14,6 +14,8 @@ app.use(express.json());
 app.use('/api', healthcheckRouter);
 app.use('/api', clipboardRouter);
 
+app.use(express.static('public'));
+
 // Démarrage du serveur
 const server = createServer(app);
 
