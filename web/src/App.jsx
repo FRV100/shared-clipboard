@@ -11,7 +11,7 @@ const App = () => {
     setContent(data.content);
 
     // 2. Connecter le WebSocket
-    ws = new WebSocket(`ws://${location.host}/ws`);
+    ws = new WebSocket(`${location.protocol === 'https:' ? 'wss' : 'ws'}://${location.host}/ws`);
 
     // 3. Mettre à jour le contenu quand un autre client envoie
     ws.onmessage = (event) => {

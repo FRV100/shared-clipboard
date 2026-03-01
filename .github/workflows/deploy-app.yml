@@ -1,11 +1,14 @@
-name: Deploy Backend
+name: Deploy App
 
 on:
   push:
     branches: [main]
     paths:
       - 'backend/**'
-      - '.github/workflows/deploy-backend.yml'
+      - 'web/**'
+      - 'compose.yaml'
+      - 'Dockerfile'
+      - '.github/workflows/deploy-app.yml'
 
 jobs:
   deploy:
@@ -30,6 +33,7 @@ jobs:
 
             echo "" > shared-clipboard/backend/.env
 
+            docker rm -f shared-clipboard-app || true
             cd shared-clipboard
             docker compose up -d --build
         env:

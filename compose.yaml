@@ -3,8 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: shared-clipboard-backend
-    container_name: shared-clipboard-backend
+    image: shared-clipboard-app
+    container_name: shared-clipboard-app
     ports:
       - "127.0.0.1:3000:3000"
     env_file:
