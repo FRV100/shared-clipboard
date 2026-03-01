@@ -2,7 +2,7 @@ services:
   backend:
     build:
       context: .
-      dockerfile: backend/Dockerfile
+      dockerfile: Dockerfile
     image: shared-clipboard-backend
     container_name: shared-clipboard-backend
     ports:
