@@ -30,7 +30,7 @@ jobs:
 
             echo "" > shared-clipboard/backend/.env
 
-            cd shared-clipboard/backend
+            cd shared-clipboard
             docker compose up -d --build
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
