@@ -3,11 +3,11 @@ FROM oven/bun:alpine
 WORKDIR /app
 
 # === Phase 2 : Dépendances ===
-COPY package.json bun.lockb* ./
+COPY backend/package.json backend/bun.lockb* ./
 RUN bun install --production
 
 # --- Phase 3 : Application ===
-COPY . .
+COPY backend/ .
 
 # --- Phase 4 : Runtime ===
 EXPOSE 3000
