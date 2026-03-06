@@ -1,6 +1,6 @@
 {
-    "name": "shared_clipboard",
-    "short_name": "shared_clipboard",
+    "name": "clipboard",
+    "short_name": "clipboard",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

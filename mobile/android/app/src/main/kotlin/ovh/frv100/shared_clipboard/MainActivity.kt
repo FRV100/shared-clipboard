@@ -1,4 +1,4 @@
-package ovh.frv100.shared_clipboard
+package ovh.frv100.clipboard
 
 import io.flutter.embedding.android.FlutterActivity
 

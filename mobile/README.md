@@ -1,4 +1,4 @@
-# shared_clipboard
+# Shared clipboard
 
 A new Flutter project.
 

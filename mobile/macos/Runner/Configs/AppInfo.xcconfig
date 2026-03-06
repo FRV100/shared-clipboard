@@ -5,7 +5,7 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = shared_clipboard
+PRODUCT_NAME = clipboard
 
 // The application's bundle identifier
 PRODUCT_BUNDLE_IDENTIFIER = ovh.frv100.sharedClipboard
