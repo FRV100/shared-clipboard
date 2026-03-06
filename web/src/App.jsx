@@ -2,6 +2,7 @@ import { createSignal, onMount, onCleanup } from 'solid-js';
 
 const App = () => {
   const [content, setContent] = createSignal('');
+  const [copied, setCopied] = createSignal(false);
   let ws;
 
   onMount(async () => {
@@ -30,6 +31,12 @@ const App = () => {
     });
   };
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(content());
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div class="flex flex-col items-center gap-4 py-20 px-4">
       <textarea
@@ -37,12 +44,23 @@ const App = () => {
         value={content()}
         onInput={(e) => setContent(e.target.value)}
       />
-      <button
-        class="px-6 py-2 bg-violet-400 text-white rounded hover:bg-violet-500"
-        onClick={handlePost}
-      >
-        Envoyer
-      </button>
+      <div class="flex flex-col items-center gap-2">
+        <div class="flex gap-2">
+          <button
+            class="px-6 py-2 bg-violet-400 text-white rounded hover:bg-violet-500"
+            onClick={handlePost}
+          >
+            🚀 Envoyer
+          </button>
+          <button
+            class="px-6 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300"
+            onClick={handleCopy}
+          >
+            📋 Copier
+          </button>
+        </div>
+        {copied() && <span class="text-sm text-green-600">✅ L'élément a été copié</span>}
+      </div>
     </div>
   );
 };
